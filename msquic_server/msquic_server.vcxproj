@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4ea71d50-0e17-4df9-82c0-2b750f4cbb4a}</ProjectGuid>
-    <RootNamespace>msquicexamplec</RootNamespace>
+    <ProjectGuid>{04378803-d4be-4b0f-ab0f-4162841f2e80}</ProjectGuid>
+    <RootNamespace>msquicserver</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,19 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\sample.c" />
+    <ClCompile Include="msquic_server.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="packages\Microsoft.Native.Quic.MsQuic.OpenSSL.2.4.8\build\native\Microsoft.Native.Quic.MsQuic.openssl.targets" Condition="Exists('packages\Microsoft.Native.Quic.MsQuic.OpenSSL.2.4.8\build\native\Microsoft.Native.Quic.MsQuic.openssl.targets')" />
+    <Import Project="..\msquic_example_c\packages\Microsoft.Native.Quic.MsQuic.OpenSSL.2.4.8\build\native\Microsoft.Native.Quic.MsQuic.openssl.targets" Condition="Exists('..\msquic_example_c\packages\Microsoft.Native.Quic.MsQuic.OpenSSL.2.4.8\build\native\Microsoft.Native.Quic.MsQuic.openssl.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\Microsoft.Native.Quic.MsQuic.OpenSSL.2.4.8\build\native\Microsoft.Native.Quic.MsQuic.openssl.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Native.Quic.MsQuic.OpenSSL.2.4.8\build\native\Microsoft.Native.Quic.MsQuic.openssl.targets'))" />
+    <Error Condition="!Exists('..\msquic_example_c\packages\Microsoft.Native.Quic.MsQuic.OpenSSL.2.4.8\build\native\Microsoft.Native.Quic.MsQuic.openssl.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\msquic_example_c\packages\Microsoft.Native.Quic.MsQuic.OpenSSL.2.4.8\build\native\Microsoft.Native.Quic.MsQuic.openssl.targets'))" />
   </Target>
 </Project>

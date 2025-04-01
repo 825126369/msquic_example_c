@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\sample.c">
+    <ClCompile Include="msquic_server.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
